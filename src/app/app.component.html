@@ -15,3 +15,31 @@
     ></stream-message-input>
   </stream-thread>
 </stream-channel>
+
+<!-- Versión final a continuación, pero la anterior es a mi parecer más linda a nivel de interfaz -->
+<!-- <stream-channel-list [customChannelPreviewTemplate]="customChannelPreviewtemplate"></stream-channel-list>
+<stream-channel>
+  <stream-channel-header></stream-channel-header>
+  <stream-message-list [messageTemplate]="customMessagetemplate"></stream-message-list>
+  <stream-notification-list></stream-notification-list>
+  <stream-message-input></stream-message-input>
+  <stream-thread name="thread">
+    <stream-message-list
+      name="thread-message-list"
+      mode="thread"
+      [messageTemplate]="customMessagetemplate"
+    ></stream-message-list>
+    <stream-message-input
+      mode="thread"
+      name="thread-message-input"
+    ></stream-message-input>
+  </stream-thread>
+</stream-channel>
+
+<ng-template #customMessagetemplate let-message="message">
+  <app-message [message]="message"></app-message>
+</ng-template>
+
+<ng-template #customChannelPreviewtemplate let-channel="channel">
+  <app-channel-preview [channel]="channel"></app-channel-preview>
+</ng-template> -->
