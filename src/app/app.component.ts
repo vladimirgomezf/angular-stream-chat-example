@@ -3,6 +3,7 @@ import {
   ChatClientService,
   ChannelService,
   StreamI18nService,
+  ThemeService,
 } from 'stream-chat-angular';
 
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
   constructor(
     private chatService: ChatClientService,
     private channelService: ChannelService,
-    private streamI18nService: StreamI18nService
+    private streamI18nService: StreamI18nService,
+    private themeService: ThemeService
   ) {
     const apiKey = 'guwa8q7k2u8p';
     const userId = 'still-recipe-3';
@@ -22,6 +24,7 @@ export class AppComponent implements OnInit {
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic3RpbGwtcmVjaXBlLTMifQ.0m8vfg84-qqGlW8tBdf0nT-r7djR9l_ucR5CKzw87sk';
     this.chatService.init(apiKey, userId, userToken);
     this.streamI18nService.setTranslation();
+    this.themeService.theme$.next('dark');
   }
 
   async ngOnInit() {
